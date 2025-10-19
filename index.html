@@ -12,17 +12,21 @@
       color: #fff;
     }
     header {
-      background: linear-gradient(90deg, #0a0a0a, #1c1f24);
-      padding: 30px;
       text-align: center;
+      padding: 40px 20px 20px 20px;
+    }
+    header img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+    header h1 {
       color: #00aaff;
-      font-size: 28px;
-      font-weight: bold;
+      margin: 0;
+      font-size: 32px;
     }
     header p {
       color: #ddd;
       font-size: 16px;
-      margin-top: 5px;
     }
     nav {
       background-color: #141618;
@@ -52,6 +56,11 @@
       border-radius: 12px;
       border-left: 4px solid #00aaff;
       box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .card:hover {
+      background-color: #00aaff22;
     }
     .card h3 {
       color: #00aaff;
@@ -71,9 +80,17 @@
     footer {
       background-color: #0c0c0c;
       text-align: center;
-      padding: 15px;
+      padding: 25px;
       color: #888;
       font-size: 14px;
+    }
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      color: #fff;
     }
     .btn {
       background-color: #00aaff;
@@ -88,18 +105,51 @@
     .btn:hover {
       background-color: #0088cc;
     }
+    /* Modais */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background-color: #1a1d21;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 700px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: #00aaff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    .modal h2 {
+      color: #00aaff;
+    }
   </style>
 </head>
 <body>
   <header>
-    NEXUM SOLUÇÕES TÉCNICAS
+    <img src="https://raw.githubusercontent.com/nexumtecnica/nexumtecnica.github.io/main/logo-nexum.png" alt="Logo Nexum" />
+    <h1>NEXUM SOLUÇÕES TÉCNICAS</h1>
     <p>Tecnologia, Inovação e Qualidade</p>
   </header>
 
   <nav>
     <a href="#home">Início</a>
     <a href="#servicos">Serviços</a>
-    <a href="#portfolio">Portfólio</a>
     <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </nav>
@@ -113,39 +163,31 @@
   <section id="servicos">
     <h2 style="color:#00aaff; text-align:center;">Nossos Serviços</h2>
     <div class="servicos">
-      <div class="card">
-        <h3>Instalações Elétricas</h3>
-        <p>Projetos residenciais e prediais com segurança e eficiência.</p>
-      </div>
-      <div class="card">
-        <h3>Automação Residencial</h3>
-        <p>Controle inteligente para iluminação, climatização e segurança.</p>
-      </div>
-      <div class="card">
-        <h3>Segurança Eletrônica</h3>
-        <p>Monitoramento CFTV, alarmes e controle de acesso.</p>
-      </div>
-      <div class="card">
-        <h3>Ar-condicionado e Climatização</h3>
-        <p>Instalação e manutenção de sistemas de climatização.</p>
-      </div>
-      <div class="card">
-        <h3>Montagem de Painéis Elétricos</h3>
-        <p>Produção sob medida para cada projeto técnico.</p>
-      </div>
-      <div class="card">
-        <h3>Cabeamento e Redes</h3>
-        <p>Infraestrutura de rede e organização de sistemas.</p>
-      </div>
+      <div class="card" onclick="abrirModal('eletrica')"><h3>Instalações Elétricas</h3></div>
+      <div class="card" onclick="abrirModal('automacao')"><h3>Automação Residencial</h3></div>
+      <div class="card" onclick="abrirModal('seguranca')"><h3>Segurança Eletrônica</h3></div>
+      <div class="card" onclick="abrirModal('ar')"><h3>Ar-condicionado e Climatização</h3></div>
+      <div class="card" onclick="abrirModal('paineis')"><h3>Montagem de Painéis Elétricos</h3></div>
+      <div class="card" onclick="abrirModal('redes')"><h3>Cabeamento e Redes</h3></div>
     </div>
   </section>
 
+  <!-- Modais -->
+  <div id="eletrica" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('eletrica')">&times;</span><h2>Instalações Elétricas</h2><p>A Nexum realiza instalações elétricas completas, residenciais e prediais, seguindo todas as normas técnicas de segurança (NBR 5410).<br>Nossos serviços incluem montagem de quadros de distribuição, instalação de tomadas e iluminação, dimensionamento de cabos e disjuntores, aterramento e sistemas de proteção contra surtos.<br>Utilizamos materiais certificados e executamos com precisão para garantir eficiência energética, confiabilidade e estética no acabamento.<br><b>Tecnologia, Inovação e Qualidade em cada ligação.</b></p></div></div>
+
+  <div id="automacao" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('automacao')">&times;</span><h2>Automação Residencial</h2><p>Transforme sua casa em um ambiente inteligente com os sistemas de automação Nexum.<br>Controle iluminação, climatização, cortinas, portões e segurança diretamente pelo celular, comandos de voz ou sensores de presença.<br>Desenvolvemos projetos personalizados que unem conforto, economia e tecnologia, integrando dispositivos Wi-Fi, Alexa e Google Assistente.<br><b>Conforto e eficiência ao alcance de um toque.</b></p></div></div>
+
+  <div id="seguranca" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('seguranca')">&times;</span><h2>Segurança Eletrônica</h2><p>A Nexum oferece soluções completas em segurança eletrônica, com instalação e manutenção de sistemas CFTV, alarmes, sensores de presença, fechaduras digitais e controle de acesso.<br>Trabalhamos com câmeras IP, analógicas e híbridas, com visualização remota via smartphone e gravação em nuvem.<br><b>Protegemos o que é mais importante pra você, com tecnologia e confiabilidade.</b></p></div></div>
+
+  <div id="ar" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('ar')">&times;</span><h2>Ar-condicionado e Climatização</h2><p>Executamos projetos completos de instalação e manutenção de sistemas de climatização residenciais e comerciais.<br>Trabalhamos com modelos Split, Multi Split, Inverter e VRF, realizando dimensionamento de carga térmica, instalação de drenos, isolamento térmico e testes de desempenho.<br><b>Ambientes confortáveis, com eficiência e economia.</b></p></div></div>
+
+  <div id="paineis" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('paineis')">&times;</span><h2>Montagem de Painéis Elétricos</h2><p>Produzimos e montamos painéis elétricos personalizados para diversas aplicações: comandos, distribuição, automação e proteção.<br>Seguimos padrões técnicos rigorosos, utilizando componentes de alta performance e acabamento profissional.<br>Cada painel é testado e identificado para garantir segurança, durabilidade e organização do sistema.<br><b>Controle total com qualidade Nexum.</b></p></div></div>
+
+  <div id="redes" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('redes')">&times;</span><h2>Cabeamento e Redes</h2><p>A Nexum projeta e instala infraestruturas de rede completas, com cabeamento estruturado, montagem de racks, patch panels e configuração de switches e roteadores.<br>Trabalhamos com redes residenciais e corporativas, garantindo estabilidade, desempenho e estética na instalação.<br><b>Conectividade inteligente para o seu espaço.</b></p></div></div>
+
   <section id="sobre" style="background-color:#131516;">
     <h2 style="color:#00aaff; text-align:center;">Sobre a Nexum</h2>
-    <p style="text-align:center; max-width:700px; margin:auto;">
-      A Nexum Soluções Técnicas é movida pela paixão em unir tecnologia, inovação e qualidade em cada projeto. 
-      Nosso objetivo é entregar soluções completas e seguras, prezando pela eficiência, estética e confiabilidade em cada serviço prestado.
-    </p>
+    <p style="text-align:center; max-width:700px; margin:auto;">A Nexum Soluções Técnicas é movida pela paixão em unir tecnologia, inovação e qualidade em cada projeto. Nosso objetivo é entregar soluções completas e seguras, prezando pela eficiência, estética e confiabilidade em cada serviço prestado.</p>
   </section>
 
   <section id="contato" class="contato">
@@ -157,6 +199,18 @@
 
   <footer>
     © 2025 Nexum Soluções Técnicas — Tecnologia, Inovação e Qualidade
+    <br><br>
+    <a href="https://facebook.com/nexumtecnica" target="_blank">Facebook</a> |
+    <a href="https://instagram.com/nexumtecnica" target="_blank">Instagram</a>
   </footer>
+
+  <script>
+    function abrirModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function fecharModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
 </body>
 </html>
