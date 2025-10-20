@@ -21,6 +21,7 @@ header {
 header img {
   width: 140px;
   margin-bottom: 10px;
+  filter: drop-shadow(0 0 8px #00aaff);
 }
 header h1 {
   color: #00aaff;
@@ -54,12 +55,13 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
+  transition: color 0.3s;
 }
 nav a:hover {
   color: #fff;
 }
 
-/* ======== BOTÃO HAMBÚRGUER (CELULAR) ======== */
+/* ======== BOTÃO HAMBÚRGUER ======== */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -113,6 +115,7 @@ section {
 }
 .card:hover {
   background-color: #00aaff22;
+  transform: scale(1.02);
 }
 .card h3 {
   color: #00aaff;
@@ -188,9 +191,10 @@ footer a {
   color: #00aaff;
   text-decoration: none;
   margin: 0 10px;
+  transition: filter 0.3s;
 }
-footer a:hover {
-  color: #fff;
+footer a:hover img {
+  filter: drop-shadow(0 0 6px #00aaff);
 }
 footer img {
   vertical-align: middle;
@@ -271,19 +275,19 @@ footer img {
   <h2>Fale Conosco</h2>
   <p>📞 (15) 99189-4365</p>
   <p>✉️ nexumtecnica@gmail.com</p>
-  <a class="btn" href="https://wa.me/5515991894365" target="_blank">Enviar mensagem no WhatsApp</a>
+  <a class="btn" href="https://wa.me/5515991894365?text=Olá!%20Gostaria%20de%20um%20orçamento%20com%20a%20Nexum%20Soluções%20Técnicas." target="_blank">Enviar mensagem no WhatsApp</a>
 </section>
 
 <footer>
   © 2025 Nexum Soluções Técnicas — Tecnologia, Inovação e Qualidade
   <br><br>
-  <a href="https://facebook.com/nexumtecnica" target="_blank">
+  <a href="https://www.facebook.com/share/1Zs2oyhcwD/" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook" width="20">Facebook
   </a>
-  <a href="https://instagram.com/nexumtecnica" target="_blank">
+  <a href="https://www.instagram.com/nexum_solucoes_tecnicas?igsh=MXVvYXFqd2tpeGhieg==" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="20">Instagram
   </a>
-  <a href="https://wa.me/5515991894365" target="_blank">
+  <a href="https://wa.me/5515991894365?text=Olá!%20Gostaria%20de%20um%20orçamento%20com%20a%20Nexum%20Soluções%20Técnicas." target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20">WhatsApp
   </a>
 </footer>
@@ -300,5 +304,6 @@ function fecharModal(id) {
   document.getElementById(id).style.display = 'none';
 }
 </script>
+
 </body>
 </html>
