@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nexum Soluções Técnicas – Tecnologia, Inovação e Qualidade</title>
-  <meta name="description" content="Nexum Soluções Técnicas: Energia Solar Off‑Grid, Automação para todos, Elétrica, Refrigeração e Segurança Eletrônica. Solicite orçamento pelo WhatsApp."/>
-  <meta property="og:title" content="Nexum Soluções Técnicas"/>
-  <meta property="og:description" content="Tecnologia, Inovação e Qualidade. Nexum 4.0 – Fazendo a diferença."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://nexumtecnica.github.io/"/>
-  <meta property="og:image" content="/assets/og-nexum.jpg"/>
-  <link rel="icon" href="/assets/favicon.png"/>
+  <meta name="description" content="Nexum Soluções Técnicas: Energia Solar Off‑Grid e Híbrida, Automação para todos, Elétrica, Refrigeração e Segurança Eletrônica. Solicite orçamento pelo WhatsApp.">
+  <meta property="og:title" content="Nexum Soluções Técnicas">
+  <meta property="og:description" content="Nexum 4.0 – Fazer diferente é fácil. Fazer a diferença é Nexum.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexumtecnica.com.br/">
+  <meta property="og:image" content="/assets/og-nexum.jpg">
+  <link rel="icon" href="/assets/favicon.png">
   <style>
     :root{
       --bg:#0b0f14; --panel:#111826; --muted:#8aa0b2; --text:#e8f1f8;
@@ -52,16 +52,21 @@
     .grid{display:grid;grid-template-columns:repeat( auto-fit, minmax(260px,1fr));gap:14px}
     .card{padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.25));box-shadow:var(--shadow);position:relative;overflow:hidden}
     .card:before{content:"";position:absolute;inset:auto -30% -30% auto;width:160px;height:160px;background:radial-gradient(circle, rgba(36,163,255,.16), transparent 60%);transform:rotate(25deg)}
-    .card h3{margin:2px 0 6px}
     .muted{color:var(--muted)}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text)}
     .btn:hover{border-color:rgba(36,163,255,.45);box-shadow:0 0 0 3px rgba(36,163,255,.15)}
 
-    /* TIMELINE */
-    .timeline{position:relative;margin-left:8px}
-    .timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.12)}
-    .titem{position:relative;padding-left:28px;margin:12px 0}
-    .titem:before{content:"";position:absolute;left:4px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(36,163,255,.18)}
+    /* EXPANDABLES */
+    details.service{border:1px solid rgba(255,255,255,.08);border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.25));box-shadow:var(--shadow);padding:0;margin:6px 0;overflow:hidden}
+    details.service[open]{box-shadow:0 0 0 3px rgba(36,163,255,.12), var(--shadow)}
+    details.service summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px}
+    details.service summary::-webkit-details-marker{display:none}
+    .s-title{font-weight:700}
+    .s-desc{color:var(--muted)}
+    .chev{transition:.25s transform ease}
+    details[open] .chev{transform:rotate(180deg)}
+    .s-panel{padding:0 16px 16px}
+    .s-list{margin:8px 0 12px;color:#d7e6f2}
 
     /* FOOTER */
     footer{margin-top:22px;border-top:1px solid rgba(255,255,255,.06);padding:16px 0;color:#cfe4f5}
@@ -117,36 +122,84 @@
     </div>
   </div>
 
-  <!-- SERVIÇOS -->
+  <!-- SERVIÇOS (EXPANSÍVEIS) -->
   <section id="servicos" class="wrap">
-    <div class="sec-head"><h2>Serviços</h2><a class="btn" href="#orcamento">Solicite Orçamento</a></div>
-    <div class="grid">
-      <article class="card">
-        <h3>Energia Solar Off‑Grid e Híbrida</h3>
-        <p class="muted">Projetos com baterias, controladores MPPT e inversores senoidais. Gestão automática de cargas e telemetria.</p>
-        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20Energia%20Solar%20Off-Grid/Híbrida." target="_blank" rel="noopener">Solicite Orçamento</a></p>
-      </article>
-      <article class="card">
-        <h3>Automação Residencial e Industrial</h3>
-        <p class="muted">ESP32, Alexa/Google, sensores de presença, temperatura e iluminação. Dashboards e rotinas inteligentes.</p>
-        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20Automação." target="_blank" rel="noopener">Solicite Orçamento</a></p>
-      </article>
-      <article class="card">
-        <h3>Elétrica Predial e Painéis</h3>
-        <p class="muted">Instalações, quadros, dimensionamento, correção e organização de infraestrutura.</p>
-        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Preciso%20de%20um%20orçamento%20de%20Elétrica." target="_blank" rel="noopener">Solicite Orçamento</a></p>
-      </article>
-      <article class="card">
-        <h3>Refrigeração e Climatização</h3>
-        <p class="muted">Câmaras frias, freezers, split, parâmetros e manutenção com foco em eficiência.</p>
-        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20Refrigeração/Climatização." target="_blank" rel="noopener">Solicite Orçamento</a></p>
-      </article>
-      <article class="card">
-        <h3>Segurança Eletrônica e Redes</h3>
-        <p class="muted">CFTV, controle de acesso, cabeamento, Wi‑Fi e redes mesh para cobertura total.</p>
-        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20Segurança%20Eletrônica/Redes." target="_blank" rel="noopener">Solicite Orçamento</a></p>
-      </article>
-    </div>
+    <div class="sec-head"><h2>Serviços</h2></div>
+
+    <!-- SOLAR OFF-GRID / HÍBRIDA -->
+    <details class="service">
+      <summary>
+        <span class="s-title">Energia Solar Off‑Grid e Híbrida</span>
+        <span class="s-desc">Autonomia com gestão inteligente</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="s-panel">
+        <div class="s-list">
+          • Projeto de bancos de baterias (AGM/LiFePO₄) • Controladores MPPT • Inversores senoidais • Proteções CC/CA • Paralelo de módulos • Telemetria e dashboards • Lógica de priorização de cargas • Planos de manutenção.
+        </div>
+        <a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20energia%20solar%20off-grid/híbrida." target="_blank" rel="noopener">Solicite Orçamento</a>
+      </div>
+    </details>
+
+    <!-- AUTOMAÇÃO RESIDENCIAL / INDUSTRIAL -->
+    <details class="service">
+      <summary>
+        <span class="s-title">Automação Residencial e Industrial</span>
+        <span class="s-desc">Conforto, eficiência e controle</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="s-panel">
+        <div class="s-list">
+          • ESP32/ESPHome • Integração Alexa/Google • Sensores (presença, temperatura, luz) • Relés e dimmers • Dashboards • Rotinas e cenas • Automação de portões, bombas, iluminação e climatização • Documentação e segurança elétrica.
+        </div>
+        <a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20automação." target="_blank" rel="noopener">Solicite Orçamento</a>
+      </div>
+    </details>
+
+    <!-- INSTALAÇÕES ELÉTRICAS / PAINÉIS -->
+    <details class="service">
+      <summary>
+        <span class="s-title">Instalações Elétricas e Painéis</span>
+        <span class="s-desc">Infraestrutura segura e organizada</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="s-panel">
+        <div class="s-list">
+          • Quadros de distribuição • Disjuntores e DPS • Seletividade e aterramento • Tomadas e iluminação • Cabeamento estruturado • Correção e organização de infraestrutura • Laudos simples e relatórios fotográficos • Painéis personalizados.
+        </div>
+        <a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Preciso%20de%20um%20orçamento%20de%20instalações%20elétricas." target="_blank" rel="noopener">Solicite Orçamento</a>
+      </div>
+    </details>
+
+    <!-- REFRIGERAÇÃO / CLIMATIZAÇÃO -->
+    <details class="service">
+      <summary>
+        <span class="s-title">Refrigeração e Climatização</span>
+        <span class="s-desc">Precisão, eficiência e segurança</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="s-panel">
+        <div class="s-list">
+          • Câmaras frias e freezers • Splits • Controladores digitais (TC900/Full Gauge) • Parâmetros, desgelo e pressões • Limpeza técnica • Diagnóstico preditivo e relatórios.
+        </div>
+        <a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20refrigeração/climatização." target="_blank" rel="noopener">Solicite Orçamento</a>
+      </div>
+    </details>
+
+    <!-- SEGURANÇA ELETRÔNICA E REDES -->
+    <details class="service">
+      <summary>
+        <span class="s-title">Segurança Eletrônica e Redes</span>
+        <span class="s-desc">Monitoramento e conectividade total</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="s-panel">
+        <div class="s-list">
+          • CFTV IP e analógico • NVR/DVR • Controle de acesso • Cabeamento estruturado • Wi‑Fi profissional e redes mesh • Integração com automação.
+        </div>
+        <a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20segurança%20eletrônica/redes." target="_blank" rel="noopener">Solicite Orçamento</a>
+      </div>
+    </details>
   </section>
 
   <!-- QUEM SOMOS -->
@@ -173,11 +226,12 @@
   <!-- NOSSA HISTÓRIA / TIMELINE -->
   <section id="historia" class="wrap">
     <div class="sec-head"><h2>Nossa História</h2></div>
-    <div class="timeline">
-      <div class="titem"><strong>2017</strong><div class="muted">Início da jornada técnica em manutenção elétrica e refrigeração.</div></div>
-      <div class="titem"><strong>2020–2023</strong><div class="muted">Projetos com Arduino/ESP32, painéis, CFTV e automação.</div></div>
-      <div class="titem"><strong>2024</strong><div class="muted">Primeiros cases de manutenção 4.0 e documentação com QR Code.</div></div>
-      <div class="titem"><strong>2025</strong><div class="muted">Lançamento do portal Nexum 4.0 e expansão para energia solar Off‑Grid.</div></div>
+    <div class="timeline" style="position:relative;margin-left:8px">
+      <div style="content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.12)"></div>
+      <div class="titem" style="position:relative;padding-left:28px;margin:12px 0"><span style="position:absolute;left:4px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(36,163,255,.18);display:inline-block"></span><strong>2017</strong><div class="muted">Início da jornada técnica em manutenção elétrica e refrigeração.</div></div>
+      <div class="titem" style="position:relative;padding-left:28px;margin:12px 0"><span style="position:absolute;left:4px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(36,163,255,.18);display:inline-block"></span><strong>2020–2023</strong><div class="muted">Projetos com Arduino/ESP32, painéis, CFTV e automação.</div></div>
+      <div class="titem" style="position:relative;padding-left:28px;margin:12px 0"><span style="position:absolute;left:4px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(36,163,255,.18);display:inline-block"></span><strong>2024</strong><div class="muted">Primeiros cases de manutenção 4.0 e documentação com QR Code.</div></div>
+      <div class="titem" style="position:relative;padding-left:28px;margin:12px 0"><span style="position:absolute;left:4px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(36,163,255,.18);display:inline-block"></span><strong>2025</strong><div class="muted">Portal Nexum 4.0 e expansão para energia solar Off‑Grid.</div></div>
     </div>
   </section>
 
@@ -190,7 +244,7 @@
         <li>Finalidade: atendimento, orçamento e execução dos serviços.</li>
         <li>Base legal: consentimento e execução de contrato.</li>
         <li>Direitos do titular: acesso, correção e exclusão de dados.</li>
-        <li>Contato do DPO: <a href="mailto:nexumtecnica@gmail.com">nexumtecnica@gmail.com</a></li>
+        <li>Contato: <a href="mailto:contato@nexumtecnica.com.br">contato@nexumtecnica.com.br</a></li>
       </ul>
       <p class="muted">Versão 1.0 – 28/10/2025</p>
     </article>
@@ -203,13 +257,13 @@
       <article class="card">
         <p>Atendemos projetos e manutenção com escopo técnico claro e prazos reais. Fale conosco pelo WhatsApp:</p>
         <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento." target="_blank" rel="noopener">Abrir WhatsApp</a></p>
-        <p class="muted">Ou envie um e‑mail para <a href="mailto:nexumtecnica@gmail.com">nexumtecnica@gmail.com</a>.</p>
+        <p class="muted">Ou envie um e‑mail para <a href="mailto:contato@nexumtecnica.com.br">contato@nexumtecnica.com.br</a>.</p>
       </article>
       <article class="card">
         <h3>Informações que ajudam no orçamento</h3>
         <ul class="muted">
-          <li>Tipo de serviço (ex.: Off‑Grid, Automação, Refrigeração);</li>
-          <li>Localização e disponibilidade de visita técnica;</li>
+          <li>Tipo de serviço (Off‑Grid, Automação, Refrigeração, etc.);</li>
+          <li>Localização e disponibilidade para visita técnica;</li>
           <li>Fotos/vídeos do local e medidas aproximadas;</li>
           <li>Prazo desejado.</li>
         </ul>
@@ -233,8 +287,8 @@
       </div>
       <div>
         <div>📞 (15) 99189‑4365</div>
-        <div>✉️ <a href="mailto:nexumtecnica@gmail.com">nexumtecnica@gmail.com</a></div>
-        <div>🌐 <a href="https://nexumtecnica.github.io/" target="_blank" rel="noopener">nexumtecnica.github.io</a></div>
+        <div>✉️ <a href="mailto:contato@nexumtecnica.com.br">contato@nexumtecnica.com.br</a></div>
+        <div>🌐 <a href="https://nexumtecnica.com.br/" target="_blank" rel="noopener">nexumtecnica.com.br</a></div>
       </div>
     </div>
   </footer>
@@ -265,8 +319,8 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Nexum Soluções Técnicas",
-    "url": "https://nexumtecnica.github.io/",
-    "email": "mailto:nexumtecnica@gmail.com",
+    "url": "https://nexumtecnica.com.br/",
+    "email": "mailto:contato@nexumtecnica.com.br",
     "telephone": "+55-15-99189-4365",
     "description": "Energia Solar Off‑Grid, Automação, Elétrica, Refrigeração e Segurança Eletrônica.",
     "areaServed": "Brasil",
