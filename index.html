@@ -1,318 +1,277 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexum Soluções Técnicas</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexum Soluções Técnicas – Tecnologia, Inovação e Qualidade</title>
+  <meta name="description" content="Nexum Soluções Técnicas: Energia Solar Off‑Grid, Automação para todos, Elétrica, Refrigeração e Segurança Eletrônica. Solicite orçamento pelo WhatsApp."/>
+  <meta property="og:title" content="Nexum Soluções Técnicas"/>
+  <meta property="og:description" content="Tecnologia, Inovação e Qualidade. Nexum 4.0 – Fazendo a diferença."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://nexumtecnica.github.io/"/>
+  <meta property="og:image" content="/assets/og-nexum.jpg"/>
+  <link rel="icon" href="/assets/favicon.png"/>
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#111826; --muted:#8aa0b2; --text:#e8f1f8;
+      --brand:#24a3ff; --brand-2:#00e0ff; --accent:#ffb347; --ok:#22c55e;
+      --radius:18px; --shadow:0 10px 28px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1000px 600px at 80% -10%, rgba(36,163,255,.12), transparent 50%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;scroll-behavior:smooth}
+    a{color:var(--brand);text-decoration:none}
+    .wrap{max-width:1150px;margin:0 auto;padding:0 16px}
 
-<!-- FAVICON -->
-<link rel="icon" type="image/png" href="favicon.png">
+    /* HEADER */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.85);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:42px;height:42px;border-radius:12px;background:radial-gradient(circle at 30% 30%, var(--brand-2), transparent 40%),linear-gradient(135deg, rgba(36,163,255,.2), rgba(255,179,71,.16));border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 0 12px rgba(0,224,255,.25), 0 6px 20px rgba(0,0,0,.35)}
+    .brand h1{font-size:18px;margin:0;letter-spacing:.4px}
+    .menu{display:flex;flex-wrap:wrap;gap:12px}
+    .menu a{padding:8px 10px;border-radius:10px;color:#d7e6f2}
+    .menu a:hover{background:rgba(255,255,255,.06)}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:linear-gradient(120deg, rgba(36,163,255,.22), rgba(0,224,255,.1));border:1px solid rgba(36,163,255,.5)}
 
-<style>
-/* ======== ESTILO GERAL ======== */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0f1113;
-  color: #fff;
-}
+    /* HERO */
+    .hero{position:relative;overflow:hidden}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;min-height:62vh;padding:26px 16px 34px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#d7e6f2;margin-bottom:10px}
+    .title{font-size:clamp(24px, 3.6vw, 44px);line-height:1.05;margin:6px 0}
+    .subtitle{color:#d7e6f2;opacity:.9}
+    .herocards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .hcard{padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.25));box-shadow:var(--shadow)}
+    .hcard strong{display:block;margin-bottom:4px}
+    .illus{min-height:260px;border-radius:18px;border:1px solid rgba(255,255,255,.06);background:radial-gradient(650px 240px at 70% 30%, rgba(36,163,255,.22), transparent 40%),linear-gradient(160deg, rgba(255,255,255,.02), rgba(0,0,0,.25));box-shadow:var(--shadow);position:relative}
+    .electric{position:absolute;inset:auto -20% -40% auto;width:380px;height:380px;background:radial-gradient(circle, rgba(36,163,255,.18), transparent 60%);transform:rotate(25deg);filter:blur(1px)}
 
-/* ======== CABEÇALHO ======== */
-header {
-  text-align: center;
-  padding: 30px 15px 10px 15px;
-}
-header img {
-  width: 140px;
-  margin-bottom: 10px;
-  filter: drop-shadow(0 0 8px #00aaff);
-}
-header h1 {
-  color: #00aaff;
-  margin: 0;
-  font-size: 32px;
-}
-header p {
-  color: #ccc;
-  font-size: 16px;
-}
+    /* SECTION */
+    section{padding:26px 0}
+    .sec-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .sec-head h2{margin:0;font-size:clamp(18px, 2.4vw, 28px)}
+    .grid{display:grid;grid-template-columns:repeat( auto-fit, minmax(260px,1fr));gap:14px}
+    .card{padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.25));box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;inset:auto -30% -30% auto;width:160px;height:160px;background:radial-gradient(circle, rgba(36,163,255,.16), transparent 60%);transform:rotate(25deg)}
+    .card h3{margin:2px 0 6px}
+    .muted{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text)}
+    .btn:hover{border-color:rgba(36,163,255,.45);box-shadow:0 0 0 3px rgba(36,163,255,.15)}
 
-/* ======== MENU ======== */
-nav {
-  background-color: #141618;
-  text-align: center;
-  padding: 10px 0;
-}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-nav li {
-  margin: 10px 15px;
-}
-nav a {
-  color: #00aaff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-nav a:hover {
-  color: #fff;
-}
+    /* TIMELINE */
+    .timeline{position:relative;margin-left:8px}
+    .timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.12)}
+    .titem{position:relative;padding-left:28px;margin:12px 0}
+    .titem:before{content:"";position:absolute;left:4px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(36,163,255,.18)}
 
-/* ======== BOTÃO HAMBÚRGUER ======== */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  position: relative;
-  margin: 0 auto;
-  width: 35px;
-  height: 25px;
-}
-.menu-toggle span {
-  height: 4px;
-  width: 100%;
-  background: #00aaff;
-  margin: 4px 0;
-  border-radius: 4px;
-  transition: 0.4s;
-}
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #0f1113;
-    padding: 20px;
-  }
-  nav ul.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-}
+    /* FOOTER */
+    footer{margin-top:22px;border-top:1px solid rgba(255,255,255,.06);padding:16px 0;color:#cfe4f5}
+    .footgrid{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px,1fr));gap:14px}
+    .copyright{margin-top:8px;font-size:14px;color:var(--muted)}
 
-/* ======== SEÇÕES ======== */
-section {
-  padding: 40px 10%;
-  text-align: center;
-}
-.servicos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-.card {
-  background-color: #1a1d21;
-  padding: 20px;
-  border-radius: 12px;
-  border-left: 4px solid #00aaff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  cursor: pointer;
-  transition: 0.3s;
-}
-.card:hover {
-  background-color: #00aaff22;
-  transform: scale(1.02);
-}
-.card h3 {
-  color: #00aaff;
-}
+    /* FLOATING ACTION BUTTONS */
+    .fab{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:60}
+    .fab a{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.2));box-shadow:var(--shadow)}
+    .fab a:hover{box-shadow:0 0 0 4px rgba(36,163,255,.18)}
 
-/* ======== MODAIS ======== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s ease-in-out;
-}
-.modal-content {
-  background-color: #1a1d21;
-  padding: 30px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 700px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-  position: relative;
-  transform: scale(0.8);
-  animation: zoomIn 0.3s forwards;
-}
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-@keyframes zoomIn {
-  from {transform: scale(0.8);}
-  to {transform: scale(1);}
-}
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #00aaff;
-  font-size: 28px;
-  cursor: pointer;
-}
-.modal h2 {
-  color: #00aaff;
-}
-
-/* ======== CONTATO ======== */
-.contato {
-  background: #101214;
-  padding: 40px 0;
-}
-.contato h2 {
-  color: #00aaff;
-}
-.contato p {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-/* ======== RODAPÉ ======== */
-footer {
-  background-color: #0c0c0c;
-  text-align: center;
-  padding: 25px;
-  color: #888;
-  font-size: 14px;
-}
-footer a {
-  color: #00aaff;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: filter 0.3s;
-}
-footer a:hover img {
-  filter: drop-shadow(0 0 6px #00aaff);
-}
-footer img {
-  vertical-align: middle;
-  margin-right: 6px;
-}
-
-/* ======== BOTÃO ======== */
-.btn {
-  background-color: #00aaff;
-  color: white;
-  padding: 10px 25px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: bold;
-}
-.btn:hover {
-  background-color: #0088cc;
-}
-</style>
+    /* RESPONSIVE */
+    @media (max-width: 860px){
+      .hero .wrap{grid-template-columns:1fr}
+      .herocards{grid-template-columns:1fr}
+      .menu{display:none}
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>NEXUM SOLUÇÕES TÉCNICAS</h1>
+      </div>
+      <nav class="menu">
+        <a href="#servicos">Serviços</a>
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#historia">Nossa História</a>
+        <a href="#privacidade">Privacidade</a>
+        <a class="cta" href="#orcamento">Solicite Orçamento</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-<img src="logo nexum.png" alt="Logo Nexum" style="width:160px; margin-top:10px;">
-  <h1>NEXUM SOLUÇÕES TÉCNICAS</h1>
-  <p>Tecnologia, Inovação e Qualidade</p>
-</header>
-
-<div class="menu-toggle" onclick="toggleMenu()">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-<nav>
-  <ul id="menu">
-    <li><a href="#home">Início</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
-</nav>
-
-<section id="home">
-  <h2>Bem-vindo à Nexum</h2>
-  <p>Oferecemos soluções técnicas completas em elétrica, automação, segurança eletrônica e climatização, com excelência e compromisso.</p>
-  <a class="btn" href="https://wa.me/5515991894365" target="_blank">Fale Conosco</a>
-</section>
-
-<section id="servicos">
-  <h2 style="color:#00aaff;">Nossos Serviços</h2>
-  <div class="servicos">
-    <div class="card" onclick="abrirModal('eletrica')"><h3>Instalações Elétricas</h3></div>
-    <div class="card" onclick="abrirModal('automacao')"><h3>Automação Residencial</h3></div>
-    <div class="card" onclick="abrirModal('seguranca')"><h3>Segurança Eletrônica</h3></div>
-    <div class="card" onclick="abrirModal('ar')"><h3>Ar-condicionado e Climatização</h3></div>
-    <div class="card" onclick="abrirModal('paineis')"><h3>Montagem de Painéis Elétricos</h3></div>
-    <div class="card" onclick="abrirModal('redes')"><h3>Cabeamento e Redes</h3></div>
+  <!-- HERO / BANNER ESPAÇO RESERVADO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="badge">⚙️ Nexum 4.0 • Fazer a diferença</div>
+        <h2 class="title">Tecnologia, Inovação e Qualidade<br>na medida certa para seu projeto</h2>
+        <p class="subtitle">Energia Solar Off‑Grid e Híbrida, Automação para todos, Elétrica, Refrigeração e Segurança Eletrônica. Projetos e manutenção inteligente com foco em resultado.</p>
+        <div class="herocards">
+          <div class="hcard"><strong>Off‑Grid 4.0</strong><span class="muted">Autonomia com monitoramento e gestão inteligente de cargas.</span></div>
+          <div class="hcard"><strong>Automação para todos</strong><span class="muted">Conforto e eficiência com ESP32, voz e aplicativos.</span></div>
+          <div class="hcard"><strong>Manutenção inteligente</strong><span class="muted">Checklists digitais, QR Codes e dados para prever falhas.</span></div>
+          <div class="hcard"><strong>Refrigeração precisa</strong><span class="muted">Temperatura, pressão e desgelo sob controle.</span></div>
+        </div>
+      </div>
+      <div class="illus"><div class="electric" aria-hidden="true"></div></div>
+    </div>
   </div>
-</section>
 
-<!-- ======== MODAIS ======== -->
-<div id="eletrica" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('eletrica')">&times;</span><h2>Instalações Elétricas</h2><p>A Nexum realiza instalações elétricas completas, residenciais e prediais, seguindo todas as normas técnicas (NBR 5410).<br>Nossos serviços incluem quadros de distribuição, tomadas, iluminação, disjuntores e aterramento.<br><b>Tecnologia, Inovação e Qualidade em cada ligação.</b></p></div></div>
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="wrap">
+    <div class="sec-head"><h2>Serviços</h2><a class="btn" href="#orcamento">Solicite Orçamento</a></div>
+    <div class="grid">
+      <article class="card">
+        <h3>Energia Solar Off‑Grid e Híbrida</h3>
+        <p class="muted">Projetos com baterias, controladores MPPT e inversores senoidais. Gestão automática de cargas e telemetria.</p>
+        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20Energia%20Solar%20Off-Grid/Híbrida." target="_blank" rel="noopener">Solicite Orçamento</a></p>
+      </article>
+      <article class="card">
+        <h3>Automação Residencial e Industrial</h3>
+        <p class="muted">ESP32, Alexa/Google, sensores de presença, temperatura e iluminação. Dashboards e rotinas inteligentes.</p>
+        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20Automação." target="_blank" rel="noopener">Solicite Orçamento</a></p>
+      </article>
+      <article class="card">
+        <h3>Elétrica Predial e Painéis</h3>
+        <p class="muted">Instalações, quadros, dimensionamento, correção e organização de infraestrutura.</p>
+        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Preciso%20de%20um%20orçamento%20de%20Elétrica." target="_blank" rel="noopener">Solicite Orçamento</a></p>
+      </article>
+      <article class="card">
+        <h3>Refrigeração e Climatização</h3>
+        <p class="muted">Câmaras frias, freezers, split, parâmetros e manutenção com foco em eficiência.</p>
+        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20Refrigeração/Climatização." target="_blank" rel="noopener">Solicite Orçamento</a></p>
+      </article>
+      <article class="card">
+        <h3>Segurança Eletrônica e Redes</h3>
+        <p class="muted">CFTV, controle de acesso, cabeamento, Wi‑Fi e redes mesh para cobertura total.</p>
+        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento%20de%20Segurança%20Eletrônica/Redes." target="_blank" rel="noopener">Solicite Orçamento</a></p>
+      </article>
+    </div>
+  </section>
 
-<div id="automacao" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('automacao')">&times;</span><h2>Automação Residencial</h2><p>Controle iluminação, climatização e segurança pelo celular, voz ou sensores.<br>Projetos personalizados com integração Alexa, Google e Wi-Fi.<br><b>Conforto e eficiência ao alcance de um toque.</b></p></div></div>
+  <!-- QUEM SOMOS -->
+  <section id="quem-somos" class="wrap">
+    <div class="sec-head"><h2>Quem Somos</h2></div>
+    <div class="grid">
+      <article class="card">
+        <p><strong>Nexum Soluções Técnicas</strong> nasceu do chão de oficina, com a missão de transformar técnica em resultado. Unimos eletricidade, automação, refrigeração e energia para entregar eficiência real – do projeto ao pós‑venda.</p>
+        <p>Somos 4.0: conectamos sensores, dados e experiência de campo para prever falhas, reduzir custos e elevar a confiabilidade dos sistemas.</p>
+        <p class="muted">Slogan: <em>Tecnologia, Inovação e Qualidade</em>.</p>
+      </article>
+      <article class="card">
+        <h3>O que nos move</h3>
+        <ul class="muted">
+          <li>Fazer a diferença em cada entrega.</li>
+          <li>Transparência técnica e documentação clara.</li>
+          <li>Segurança, conformidade e boas práticas.</li>
+          <li>Parceria de longo prazo com nossos clientes.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
-<div id="seguranca" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('seguranca')">&times;</span><h2>Segurança Eletrônica</h2><p>Soluções completas em CFTV, alarmes, sensores, fechaduras digitais e controle de acesso.<br>Monitoramento remoto e gravação em nuvem.<br><b>Protegemos o que é mais importante pra você.</b></p></div></div>
+  <!-- NOSSA HISTÓRIA / TIMELINE -->
+  <section id="historia" class="wrap">
+    <div class="sec-head"><h2>Nossa História</h2></div>
+    <div class="timeline">
+      <div class="titem"><strong>2017</strong><div class="muted">Início da jornada técnica em manutenção elétrica e refrigeração.</div></div>
+      <div class="titem"><strong>2020–2023</strong><div class="muted">Projetos com Arduino/ESP32, painéis, CFTV e automação.</div></div>
+      <div class="titem"><strong>2024</strong><div class="muted">Primeiros cases de manutenção 4.0 e documentação com QR Code.</div></div>
+      <div class="titem"><strong>2025</strong><div class="muted">Lançamento do portal Nexum 4.0 e expansão para energia solar Off‑Grid.</div></div>
+    </div>
+  </section>
 
-<div id="ar" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('ar')">&times;</span><h2>Ar-condicionado e Climatização</h2><p>Projetos de climatização residenciais e comerciais com eficiência e conforto.<br>Instalação e manutenção de sistemas Split, Multi Split e Inverter.<br><b>Ambientes confortáveis com economia.</b></p></div></div>
+  <!-- POLÍTICA DE PRIVACIDADE (resumo) -->
+  <section id="privacidade" class="wrap">
+    <div class="sec-head"><h2>Política de Privacidade</h2></div>
+    <article class="card">
+      <p>Respeitamos seus dados. Coletamos somente informações necessárias para contato e elaboração de propostas (nome, telefone, e‑mail e detalhes do serviço). Os dados não são vendidos nem compartilhados com terceiros sem consentimento.</p>
+      <ul class="muted">
+        <li>Finalidade: atendimento, orçamento e execução dos serviços.</li>
+        <li>Base legal: consentimento e execução de contrato.</li>
+        <li>Direitos do titular: acesso, correção e exclusão de dados.</li>
+        <li>Contato do DPO: <a href="mailto:nexumtecnica@gmail.com">nexumtecnica@gmail.com</a></li>
+      </ul>
+      <p class="muted">Versão 1.0 – 28/10/2025</p>
+    </article>
+  </section>
 
-<div id="paineis" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('paineis')">&times;</span><h2>Montagem de Painéis Elétricos</h2><p>Montagem sob medida com componentes de alta performance.<br>Testes e acabamento profissional garantem segurança e durabilidade.<br><b>Controle total com qualidade Nexum.</b></p></div></div>
+  <!-- ORÇAMENTO / CONTATO -->
+  <section id="orcamento" class="wrap">
+    <div class="sec-head"><h2>Solicite Orçamento</h2></div>
+    <div class="grid">
+      <article class="card">
+        <p>Atendemos projetos e manutenção com escopo técnico claro e prazos reais. Fale conosco pelo WhatsApp:</p>
+        <p><a class="btn" href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento." target="_blank" rel="noopener">Abrir WhatsApp</a></p>
+        <p class="muted">Ou envie um e‑mail para <a href="mailto:nexumtecnica@gmail.com">nexumtecnica@gmail.com</a>.</p>
+      </article>
+      <article class="card">
+        <h3>Informações que ajudam no orçamento</h3>
+        <ul class="muted">
+          <li>Tipo de serviço (ex.: Off‑Grid, Automação, Refrigeração);</li>
+          <li>Localização e disponibilidade de visita técnica;</li>
+          <li>Fotos/vídeos do local e medidas aproximadas;</li>
+          <li>Prazo desejado.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
-<div id="redes" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal('redes')">&times;</span><h2>Cabeamento e Redes</h2><p>Infraestruturas de rede completas com racks, patch panels e switches.<br>Conectividade estável e estética profissional.<br><b>Conectividade inteligente para o seu espaço.</b></p></div></div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap footgrid">
+      <div>
+        <strong>Nexum Soluções Técnicas</strong>
+        <div class="copyright">© 2025 Nexum Soluções Técnicas. Todos os direitos reservados.</div>
+        <div class="copyright">Tecnologia, Inovação e Qualidade.</div>
+      </div>
+      <div>
+        <div><a href="#quem-somos">Quem Somos</a></div>
+        <div><a href="#servicos">Serviços</a></div>
+        <div><a href="#privacidade">Política de Privacidade</a></div>
+        <div><a href="#orcamento">Solicite Orçamento</a></div>
+      </div>
+      <div>
+        <div>📞 (15) 99189‑4365</div>
+        <div>✉️ <a href="mailto:nexumtecnica@gmail.com">nexumtecnica@gmail.com</a></div>
+        <div>🌐 <a href="https://nexumtecnica.github.io/" target="_blank" rel="noopener">nexumtecnica.github.io</a></div>
+      </div>
+    </div>
+  </footer>
 
-<section id="sobre" style="background-color:#131516;">
-  <h2 style="color:#00aaff;">Sobre a Nexum</h2>
-  <p style="max-width:700px;margin:auto;">A Nexum Soluções Técnicas é movida pela paixão em unir tecnologia, inovação e qualidade em cada projeto. Nosso objetivo é entregar soluções seguras e eficientes, prezando pela estética e confiabilidade em cada serviço prestado.</p>
-</section>
+  <!-- FLOATING BUTTONS: WhatsApp & Topo -->
+  <div class="fab">
+    <a href="https://wa.me/5515991894365?text=Olá%20Nexum!%20Quero%20um%20orçamento." target="_blank" rel="noopener" aria-label="WhatsApp">
+      <!-- WhatsApp icon -->
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.52 3.48A11.94 11.94 0 0012.05 0C5.51 0 .22 5.29.22 11.83c0 2.09.55 4.02 1.52 5.72L0 24l6.61-1.72a11.73 11.73 0 005.44 1.37h.01c6.54 0 11.83-5.29 11.83-11.83 0-3.16-1.23-6.13-3.37-8.27zM12.06 21.3h-.01a9.52 9.52 0 01-4.84-1.32l-.35-.21-3.93 1.02 1.05-3.83-.23-.39a9.46 9.46 0 01-1.45-5.04C2.3 6.5 6.7 2.11 12.05 2.11c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 7c0 5.35-4.38 9.74-9.87 9.74zm5.43-7.34c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.23-.66.08-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.47.13-.62.13-.13.3-.34.44-.5.15-.16.2-.27.3-.46.1-.2.05-.35-.02-.5-.08-.15-.68-1.64-.94-2.24-.25-.6-.5-.52-.68-.53l-.58-.01c-.2 0-.5.07-.76.35-.26.27-.99.97-.99 2.36s1.02 2.74 1.16 2.93c.15.2 2.01 3.07 4.88 4.31.68.29 1.21.46 1.62.59.68.22 1.3.19 1.78.12.54-.08 1.78-.73 2.03-1.44.25-.7.25-1.3.18-1.44-.06-.14-.27-.23-.57-.38z" fill="currentColor"/></svg>
+    </a>
+    <a href="#topo" id="toTop" aria-label="Voltar ao topo" style="display:none">
+      <!-- Up arrow -->
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 4l-8 8h6v8h4v-8h6z" fill="currentColor"/></svg>
+    </a>
+  </div>
 
-<section id="contato" class="contato">
-  <h2>Fale Conosco</h2>
-  <p>📞 (15) 99189-4365</p>
-  <p>✉️ nexumtecnica@gmail.com</p>
-  <a class="btn" href="https://wa.me/5515991894365?text=Olá!%20Gostaria%20de%20um%20orçamento%20com%20a%20Nexum%20Soluções%20Técnicas." target="_blank">Enviar mensagem no WhatsApp</a>
-</section>
+  <script>
+    // Mostrar/ocultar botão "Topo"
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', ()=>{
+      toTop.style.display = window.scrollY > 500 ? 'inline-flex' : 'none';
+    });
+  </script>
 
-<footer>
-  © 2025 Nexum Soluções Técnicas — Tecnologia, Inovação e Qualidade
-  <br><br>
-  <a href="https://www.facebook.com/share/1Zs2oyhcwD/" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook" width="20">Facebook
-  </a>
-  <a href="https://www.instagram.com/nexum_solucoes_tecnicas?igsh=MXVvYXFqd2tpeGhieg==" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="20">Instagram
-  </a>
-  <a href="https://wa.me/5515991894365?text=Olá!%20Gostaria%20de%20um%20orçamento%20com%20a%20Nexum%20Soluções%20Técnicas." target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20">WhatsApp
-  </a>
-</footer>
-
-<script>
-function toggleMenu() {
-  const menu = document.getElementById('menu');
-  menu.classList.toggle('show');
-}
-function abrirModal(id) {
-  document.getElementById(id).style.display = 'flex';
-}
-function fecharModal(id) {
-  document.getElementById(id).style.display = 'none';
-}
-</script>
-
+  <!-- JSON-LD básico -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nexum Soluções Técnicas",
+    "url": "https://nexumtecnica.github.io/",
+    "email": "mailto:nexumtecnica@gmail.com",
+    "telephone": "+55-15-99189-4365",
+    "description": "Energia Solar Off‑Grid, Automação, Elétrica, Refrigeração e Segurança Eletrônica.",
+    "areaServed": "Brasil",
+    "sameAs": []
+  }
+  </script>
 </body>
 </html>
